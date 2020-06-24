@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.9.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.9.0/mapbox-gl.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #my-map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -8,6 +23,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="my-map"></div>
+    <script type="text/javascript">
+
+        // Get your own API Key on https://myprojects.geoapify.com
+        var myAPIKey = "425ab7232cfd4b4daef2517d6b92595b";
+
+        var map = new mapboxgl.Map({
+            container: 'my-map',
+            style: "https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b",
+        });
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
     
 
     <!--Jquery CDN-->
