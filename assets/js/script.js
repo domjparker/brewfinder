@@ -2,7 +2,7 @@ $(document).ready(function() {
     //array to store brewery data objects
     var breweries = [];
     //replace with UI from front end selector
-    var city = prompt("Enter City Name")
+    //var city = prompt("Enter City Name")
     var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city;
 
     $.ajax({
