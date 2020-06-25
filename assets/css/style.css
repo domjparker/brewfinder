@@ -3,9 +3,25 @@ body {
     padding: 0;
 }
 
+section {
+    height: 100vh;
+}
+
+/* section .card {
+    height: 100vh;
+} */
+
+
+/* #beerImage {
+    width: 100%;
+    height: auto
+} */
+
 #my-map {
     position: absolute;
     top: 0;
     bottom: 0;
+    height: 80%;
     width: 80%;
+    
 }

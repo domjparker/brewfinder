@@ -4,8 +4,8 @@ $(document).ready(function() {
 
   function getBrewData(){
         //replace with UI from front end selector
-        var city = prompt("Enter City Name")
-        var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city;
+        // var city = prompt("Enter City Name")
+        // var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city;
     
         $.ajax({
             url: queryURL,
@@ -41,7 +41,7 @@ $(document).ready(function() {
           }
         }
       }
-  console.log(breweries); 
+  console.log(breweries);
   //call function to get brewery data
   getBrewData();
 
@@ -94,15 +94,8 @@ $(document).ready(function() {
           });
         }
 
-
       })
-
     
   }
-
-
-
-
-
 
 })
