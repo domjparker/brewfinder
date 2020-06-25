@@ -46,56 +46,23 @@ $(document).ready(function() {
   getBrewData();
 
 
-  //global vars for markers
 
-  var markers = [];
 
-  function reverseGeoCoding(lat, lon){
-      //reverse geocoding api
-      var apiKey = "&apiKey=04ff4fe9c2d14704a84586b6674f43c8";
-      var queryURL = "https://api.geoapify.com/v1/geocode/reverse?lat=" + lat + "&lon=" + lon + "&lang=de&limit=10" + apiKey;
-      // console.log(queryURL);
+  //used to center on lon, lat
+  var map = new mapboxgl.Map({
+    center: [-122, 42],
+    zoom: 9,
+    container: 'my-map',
+    style: `https://maps.geoapify.com/v1/styles/positron/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b`,
+  });
+  //creates the element for icon
+  var beerIcon = document.createElement('div');
+beerIcon.classList.add("beer");
 
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function(geojson){
-        console.log(geojson)
-
-        function showGeoJSONPoints(geojson) {
-
-          if (markers.length) {
-            markers.forEach(marker => marker.remove());
-            markers = [];
-          }
-        
-          // each feature contains 1 place
-          geojson.features.forEach((feature, index) => {
-            var markerIcon = document.createElement('div');
-            markerIcon.classList.add("my-marker");
-            // Icon size: 31 x 46px, shadow adds: 4px
-            markerIcon.style.backgroundImage = `url(https://api.geoapify.com/v1/icon/?type=awesome&color=%233f99b1&text=${index + 1}&noWhiteCircle&apiKey=${myAPIKey})`;
-        
-            var popup = new mapboxgl.Popup({
-                anchor: 'bottom',
-                offset: [0, -42] // height - shadow
-              })
-              .setText(feature.properties.name);
-        
-            var marker = new mapboxgl.Marker(markerIcon, {
-                anchor: 'bottom',
-                offset: [0, 4] // shadow
-              })
-              .setLngLat(feature.geometry.coordinates)
-              .setPopup(popup)
-              .addTo(map);
-        
-            markers.push(marker);
-          });
-        }
-
-      })
-    
-  }
-
+var airport = new mapboxgl.Marker(beerIcon, {
+    anchor: 'bottom',
+    offset: [0, 6]
+  })
+  .setLngLat([-122, 42])
+  .addTo(map);
 })
