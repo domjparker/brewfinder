@@ -41,7 +41,7 @@ $(document).ready(function() {
           }
         }
       }
-  console.log(breweries); 
+  console.log(breweries);
   //call function to get brewery data
   getBrewData();
 
@@ -94,15 +94,8 @@ $(document).ready(function() {
           });
         }
 
-
       })
-
     
   }
-
-
-
-
-
 
 })
