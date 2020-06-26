@@ -31,9 +31,8 @@ $(document).ready(function() {
             //populate the map with markers
             populateMap();
           })
-
-
   }
+  
   //Populates map with markers from breweries array
     function populateMap(){
         //creates the element for icon
@@ -49,8 +48,9 @@ $(document).ready(function() {
         })
         .setLngLat([lon, lat])
         .addTo(map);
+        
         }
-
+        map.flyTo({center: [breweries[0].lon,breweries[0].lat], zoom: 9})
     }
 
     //Removes breweries with null lat and lon from breweries array
@@ -66,11 +66,11 @@ $(document).ready(function() {
   getBrewData();
 
     // used to center on lon, lat
-    var map = new mapboxgl.Map({
+    /*var map = new mapboxgl.Map({
       center: [-122, 42],
       zoom: 9,
       container: 'my-map',
       style: `https://maps.geoapify.com/v1/styles/positron/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b`,
-    });
+    });*/
 
   })

@@ -33,8 +33,11 @@
                 var map = new mapboxgl.Map({
                     container: 'my-map',
                     style: "https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b",
-                });
+                    center: [-0, 0], 
+                    zoom: 0,
+                  });
                 map.addControl(new mapboxgl.NavigationControl());
+
                     </script>  
             </div>
             <!-- sidebar div -->
