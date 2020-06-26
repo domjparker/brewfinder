@@ -1,10 +1,27 @@
 body {
+    margin: 0;
+    padding: 0;
     background-image: url("https://uproxx.com/wp-content/uploads/2019/05/beers-grid-uproxx-1.jpg");
     background-color: rgb(206, 190, 97);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 90%;
 }
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    width: 60%;
+    border-radius: 40px;
+    padding: 10px;
+
+
+}
+
 .footer {
     position: fixed;
     left: 0;
