@@ -7,21 +7,34 @@ section {
     height: 100vh;
 }
 
-/* section .card {
+
+section .card {
     height: 100vh;
-} */
+}
 
 
-/* #beerImage {
+#beerImage {
     width: 100%;
     height: auto
-} */
+}
 
 #my-map {
     position: absolute;
     top: 0;
     bottom: 0;
-    height: 80%;
-    width: 80%;
-    
+    width: 100%;
+}
+.my-marker {
+ height: 46px;
+ width: 31px;
+ cursor: pointer;
+}
+.beer {
+height: 69px;
+width: 47px;
+background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372a2d4&size=x-large&icon=beer&apiKey=425ab7232cfd4b4daef2517d6b92595b);
+cursor: pointer;
+}
+#sideBar{
+    height: 1000px;
 }
