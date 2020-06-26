@@ -46,13 +46,16 @@
                 <div class="card" id="sideBar">
                     <div class="card-content">
                         <!-- search input in sidebar -->
-                        <div class="row orange">   
+                        <form class="col s12">
+                          <div class="row orange">
                             <div class="input-field col s12">
                               <i class="material-icons prefix">search</i>
-                              <input type="text" id="search-input" class="redo-search">
-                              <label for="redo-search-input">Redo city search</label>
+                              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                              <label for="search-input">Search city</label>
                             </div>
-                        </div>
+                          </div>
+                        </form>
+                        
                         
                         <!-- scrolling table demo in sidebar - not statically needed, as will be rendered through DOM manipulation -->
                         <div class="responsive-table table-status-sheet">
