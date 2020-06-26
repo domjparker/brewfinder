@@ -1,61 +1,31 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url("https://uproxx.com/wp-content/uploads/2019/05/beers-grid-uproxx-1.jpg");
+    background-color: rgb(206, 190, 97);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 90%;
 }
 
-section {
-    height: 100vh;
-}
-
-/* not sure if this is still needed */
-section .card {
-    height: 100vh;
-}
-
-
-#beerImage {
-    width: 100%;
-    height: auto
-}
-
-#my-map {
+.search-box {
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    width: 60%;
+    border-radius: 40px;
+    padding: 10px;
+
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
-}
-.my-marker {
- height: 46px;
- width: 31px;
- cursor: pointer;
-}
-.beer {
-height: 69px;
-width: 47px;
-background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372a2d4&size=x-large&icon=beer&apiKey=425ab7232cfd4b4daef2517d6b92595b);
-cursor: pointer;
-}
-
-/* Sidebar */
-#sideBar {
-    max-height: 90vh;
-    background: rgba(0, 0, 0, .3)
-}
-
-/* scrolling table list in sidebar */
-tbody {
-    display:block;
-    height:550px;
-    overflow:auto;
-    }
-thead, tbody tr {
-    display:table;
-    width:100%;
-    table-layout:fixed;
-    }
-thead {
-    width: calc( 100% - 1em )
-    }
-table {
-    width:100%;
-    }
+    color: brown;
+    text-align: center;
