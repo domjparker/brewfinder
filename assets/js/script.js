@@ -28,12 +28,32 @@ $(document).ready(function() {
             }
             //remove console log before final release
             console.log(breweries);
-            //call reverse geoCoding
-            reverseGeoCoding(breweries[1].lat, breweries[1].lon);
-            
+            //populate the map with markers
+            populateMap();
           })
-  }
 
+
+  }
+  //Populates map with markers from breweries array
+    function populateMap(){
+        //creates the element for icon
+        for(let j = 0;j<breweries.length;j++){
+          var lat = breweries[j].lat;
+          var lon = breweries[j].lon;
+        var beerIcon2 = document.createElement('div');
+        beerIcon2.classList.add("beer");
+      
+      var airport2 = new mapboxgl.Marker(beerIcon2, {
+          anchor: 'bottom',
+          offset: [0, 6]
+        })
+        .setLngLat([lon, lat])
+        .addTo(map);
+        }
+
+    }
+
+    //Removes breweries with null lat and lon from breweries array
       function arrayCleaner(){
         for (var i=0; i< breweries.length; i++){
           if (breweries[i].lat === null || breweries[i].lon === null){
@@ -41,28 +61,16 @@ $(document).ready(function() {
           }
         }
       }
-  console.log(breweries);
+
   //call function to get brewery data
   getBrewData();
 
+    // used to center on lon, lat
+    var map = new mapboxgl.Map({
+      center: [-122, 42],
+      zoom: 9,
+      container: 'my-map',
+      style: `https://maps.geoapify.com/v1/styles/positron/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b`,
+    });
 
-
-
-  //used to center on lon, lat
-  var map = new mapboxgl.Map({
-    center: [-122, 42],
-    zoom: 9,
-    container: 'my-map',
-    style: `https://maps.geoapify.com/v1/styles/positron/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b`,
-  });
-  //creates the element for icon
-  var beerIcon = document.createElement('div');
-beerIcon.classList.add("beer");
-
-var airport = new mapboxgl.Marker(beerIcon, {
-    anchor: 'bottom',
-    offset: [0, 6]
   })
-  .setLngLat([-122, 42])
-  .addTo(map);
-})
