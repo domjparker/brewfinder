@@ -15,7 +15,7 @@
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
     <!--Custom CSS-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mapPage.css">
 </head>
 <body>
     
@@ -46,91 +46,52 @@
                 <div class="card" id="sideBar">
                     <div class="card-content">
                         <!-- search input in sidebar -->
-                        <div class="row orange">   
+                        <form class="col s12">
+                          <div class="row orange">
                             <div class="input-field col s12">
                               <i class="material-icons prefix">search</i>
-                              <input type="text" id="search-input" class="redo-search">
-                              <label for="redo-search-input">Redo city search</label>
+                              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                              <label for="search-input">Search city</label>
                             </div>
-                        </div>
+                            <!-- temporary search button -->
+                            <button class="btn waves-effect waves-light" id="searchButton" type="submit" name="action">Submit
+                              <i class="material-icons right">submit</i>
+                            </button>
+                          </div>
+                        </form>
                         
+                        <ul class="collection with-header">
+                          <li class="collection-header"><h4>Example header</h4></li>
+                          <li class="collection-item"><div>example<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                          <li class="collection-item"><div>example<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                          <li class="collection-item"><div>example<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                          <li class="collection-item"><div>example<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                        </ul>
+
+
                         <!-- scrolling table demo in sidebar - not statically needed, as will be rendered through DOM manipulation -->
-                        <div class="responsive-table table-status-sheet">
+                        <!-- <div class="responsive-table table-status-sheet">
                             <table class="bordered">
                               
                               <tbody>
                                 <tr>
-                                  <td> 
+                                  <td>  -->
                                       <!-- checkbox demo -->
-                                    <label>
+                                    <!-- <label>
                                         <input type="checkbox" />  
                                         <span></span>
                                     </label></td>
                                   <td>Category1</td>                 
                                 </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Category2</td>                 
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Category3</td>                 
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>Category4</td>                 
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Category1</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Category2</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Category3</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Category4</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>1</td>
-                                    <td>Category1</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Category2</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Category3</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Category4</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>1</td>
-                                    <td>Category1</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Category2</td>                 
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Category3</td>                 
-                                  </tr>
+                                
+                                
                                   <tr>
                                     <td>4</td>
                                     <td>Category4</td>                 
                                   </tr>
                               </tbody>
                             </table>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
