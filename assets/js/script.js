@@ -1,11 +1,33 @@
 $(document).ready(function() {
+      //user inputs city name 
+      var city = prompt("Enter City Name");
        //array to store brewery data objects
        var breweries = [];
+       //global API key
+      var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b"
+
+    //use GEOcoding to center map on city coordinates
+  function centerMap(){
+    var queryURL =  "https://api.geoapify.com/v1/geocode/search?text=" + city + "&type=city" + apikey;
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(data){
+      console.log(data);
+      console.log(data.features[1].properties.lat);
+      console.log(data.features[1].properties.lon);
+      //lat and lon of searched city
+      var lon = data.features[1].properties.lon;
+      var lat = data.features[1].properties.lat;
+      // map zooms to city coordinates
+      map.flyTo({center: [lon,lat], zoom: 9})
+    })
+  }
 
   function getBrewData(){
         //replace with UI from front end selector
-        var city = prompt("Enter City Name")
-        var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city;
+        var perPage = "&per_page=50";
+        var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city + perPage;
     
         $.ajax({
             url: queryURL,
@@ -50,7 +72,6 @@ $(document).ready(function() {
         .addTo(map);
         
         }
-        map.flyTo({center: [breweries[0].lon,breweries[0].lat], zoom: 9})
     }
 
     //Removes breweries with null lat and lon from breweries array
@@ -64,13 +85,6 @@ $(document).ready(function() {
 
   //call function to get brewery data
   getBrewData();
-
-    // used to center on lon, lat
-    /*var map = new mapboxgl.Map({
-      center: [-122, 42],
-      zoom: 9,
-      container: 'my-map',
-      style: `https://maps.geoapify.com/v1/styles/positron/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b`,
-    });*/
+  centerMap();
 
   })
