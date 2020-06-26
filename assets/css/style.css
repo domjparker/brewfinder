@@ -7,7 +7,7 @@ section {
     height: 100vh;
 }
 
-
+/* not sure if this is still needed */
 section .card {
     height: 100vh;
 }
@@ -35,6 +35,27 @@ width: 47px;
 background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372a2d4&size=x-large&icon=beer&apiKey=425ab7232cfd4b4daef2517d6b92595b);
 cursor: pointer;
 }
-#sideBar{
-    height: 1000px;
+
+/* Sidebar */
+#sideBar {
+    max-height: 90vh;
+    background: rgba(0, 0, 0, .3)
 }
+
+/* scrolling table list in sidebar */
+tbody {
+    display:block;
+    height:550px;
+    overflow:auto;
+    }
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+    }
+thead {
+    width: calc( 100% - 1em )
+    }
+table {
+    width:100%;
+    }

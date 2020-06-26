@@ -19,69 +19,124 @@
 </head>
 <body>
     
-    <!-- Splash section -->
-    <section class="section green" id="splashSection">
-
-
-
-
-    </section>
-    
     <!-- map results section-->
-    <section class="section blue" id="mapResultsSection">
+    <section class="section" id="mapResultsSection">
         <div class="row">
             <!-- Map div -->
             <div class="col s12 l8">
-                <img id="beerImage" class="responsive-img" src="assets/imgs/shot-glasses-placed-on-tabletop-1400255.jpg">
+                <div id="my-map"></div>
+                    <script type="text/javascript">
+        
+                // Get your own API Key on https://myprojects.geoapify.com
+                var myAPIKey = "425ab7232cfd4b4daef2517d6b92595b";
+        
+                var map = new mapboxgl.Map({
+                    container: 'my-map',
+                    style: "https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b",
+                });
+                map.addControl(new mapboxgl.NavigationControl());
+                    </script>  
             </div>
             <!-- sidebar div -->
-            <div class="col s12 l4" id="sideBar">
+            <div class="col s12 l4">
                 
-                <div class="card">
-                  
-                  <div class="card-stacked">
+                <div class="card" id="sideBar">
                     <div class="card-content">
-                        <div class="card">
-                            <textarea placeholder="Text Here" id="textarea1" class="materialize-textarea"></textarea>
-                            <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+                        <!-- search input in sidebar -->
+                        <div class="row orange">   
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">search</i>
+                              <input type="text" id="search-input" class="redo-search">
+                              <label for="redo-search-input">Redo city search</label>
+                            </div>
                         </div>
-                        <div >
-                            <h1>First result</h1>
-                            <p>Here's some info!</p>
+                        
+                        <!-- scrolling table demo in sidebar - not statically needed, as will be rendered through DOM manipulation -->
+                        <div class="responsive-table table-status-sheet">
+                            <table class="bordered">
+                              
+                              <tbody>
+                                <tr>
+                                  <td> 
+                                      <!-- checkbox demo -->
+                                    <label>
+                                        <input type="checkbox" />  
+                                        <span></span>
+                                    </label></td>
+                                  <td>Category1</td>                 
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>Category2</td>                 
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>Category3</td>                 
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>Category4</td>                 
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Category1</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Category2</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Category3</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Category4</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>Category1</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Category2</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Category3</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Category4</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>Category1</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Category2</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Category3</td>                 
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Category4</td>                 
+                                  </tr>
+                              </tbody>
+                            </table>
                         </div>
+
                     </div>
-                  </div>
                 </div>
             </div>
 
         </div>
 
-        </div>
+       
     </section>
-    
-    
-
-      
-
-
-        <!-- <div id="my-map">
-            <script type="text/javascript">
-
-        // Get your own API Key on https://myprojects.geoapify.com
-        var myAPIKey = "425ab7232cfd4b4daef2517d6b92595b";
-
-        var map = new mapboxgl.Map({
-            container: 'my-map',
-            style: "https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=425ab7232cfd4b4daef2517d6b92595b",
-        });
-        map.addControl(new mapboxgl.NavigationControl());
-            </script>  -->
-      
-
-    
-
-    
-    
     
     
     <!--Leaflet JavaScript-->
