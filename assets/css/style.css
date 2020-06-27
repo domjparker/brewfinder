@@ -8,7 +8,9 @@ body {
     background-size: cover;
 }
 
-
+nav {
+    text-shadow: 1px 1px 2px #000000;
+}
 
 .introBoxAlign {
     margin-top: 40%;

@@ -17,7 +17,7 @@ nav {
     position: absolute;
     z-index: 10;
     padding-top: 10px;
-    text-shadow: 2px 2px 2px #000000;
+    text-shadow: 1px 1px 2px #000000;
 }
 
 
@@ -56,7 +56,16 @@ cursor: pointer;
     align-items: center;
 }
 
+.searchInput {
+    color: whitesmoke;
+}
+
 .breweryData {
     max-height: 70vh;
     overflow-y: auto;
+}
+
+.phoneIcon {
+    display: flex;
+    align-items: center;
 }
