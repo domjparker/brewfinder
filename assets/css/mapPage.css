@@ -46,3 +46,8 @@ cursor: pointer;
     display: flex;
     align-items: center;
 }
+
+.breweryData {
+    height: 350px;
+    overflow-y: auto;
+}
