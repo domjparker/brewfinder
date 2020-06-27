@@ -1,10 +1,22 @@
 $(document).ready(function() {
   //user inputs city name 
-  var city = prompt("Enter City Name");
+  // var city = prompt("Enter City Name");
+  var city;
    //array to store brewery data objects
    var breweries = [];
    //global API key
   var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b"
+
+  //get city name from search input
+
+$(".searchButton").on("click",function(){
+  event.preventDefault();
+  city = $(".searchInput").val();
+  //call function to get brewery data
+  getBrewData();
+  //call function to center map
+  centerMap();
+  })
 
 //use GEOcoding to center map on city coordinates
 function centerMap(){
@@ -82,9 +94,5 @@ function populateMap(){
       }
     }
   }
-
-//call function to get brewery data
-getBrewData();
-centerMap();
 
 })
