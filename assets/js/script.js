@@ -18,6 +18,18 @@ $(".searchButton").on("click",function(){
   getBrewData();
   })
 
+  //if user presses enter key
+  $(".searchInput").keyup(function(event){
+    if(event.which === 13){
+      event.preventDefault();
+      city = $(".searchInput").val();
+      //call function to center map
+      centerMap();
+      //call function to get brewery data
+      getBrewData();
+    }
+  })
+
 //use GEOcoding to center map on city coordinates
 function centerMap(){
 var queryURL =  "https://api.geoapify.com/v1/geocode/search?text=" + city + "&type=city" + apikey;
@@ -115,6 +127,11 @@ function renderBrewData(){
     var breweryPhone = $("<p>");
     breweryPhone.text(breweries[i].phone);
     brewery.append(breweryPhone);
+    var phoneIcon = $("<i>");
+    phoneIcon.text("call");
+    phoneIcon.addClass("material-icons");
+    breweryPhone.addClass("phoneIcon");
+    breweryPhone.prepend(phoneIcon);
     brewDataBox.prepend(brewery);
   }
 }
