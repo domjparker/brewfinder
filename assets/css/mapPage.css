@@ -1,3 +1,9 @@
+/* utility hide class  */
+
+.hide {
+    display: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,9 +13,11 @@ section {
     height: 100vh;
 }
 
-/* not sure if this is still needed */
-section .card {
-    height: 100vh;
+nav {
+    position: absolute;
+    z-index: 10;
+    padding-top: 10px;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 
@@ -38,6 +46,7 @@ cursor: pointer;
 
 /* Sidebar */
 #sideBar {
+    margin-top: 68px;
     max-height: 90vh;
     background: rgba(0, 0, 0, .5)
 }
@@ -45,4 +54,9 @@ cursor: pointer;
 .searchBox {
     display: flex;
     align-items: center;
+}
+
+.breweryData {
+    max-height: 70vh;
+    overflow-y: auto;
 }
