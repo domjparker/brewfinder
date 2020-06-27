@@ -39,23 +39,10 @@ cursor: pointer;
 /* Sidebar */
 #sideBar {
     max-height: 90vh;
-    background: rgba(0, 0, 0, .3)
+    background: rgba(0, 0, 0, .5)
 }
 
-/* scrolling table list in sidebar */
-tbody {
-    display:block;
-    height:550px;
-    overflow:auto;
-    }
-thead, tbody tr {
-    display:table;
-    width:100%;
-    table-layout:fixed;
-    }
-thead {
-    width: calc( 100% - 1em )
-    }
-table {
-    width:100%;
-    }
+.searchBox {
+    display: flex;
+    align-items: center;
+}
