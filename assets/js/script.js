@@ -110,11 +110,19 @@ function populateMap(){
     beerIcon[j] = document.createElement('div');
     beerIcon[j].classList.add("beer");
     beerIcon[j].classList.add(j + "beer");
+    
+    var popup = new mapboxgl.Popup({
+      anchor: 'bottom',
+      offset: [0, -42] // height - shadow
+    })
+    .setText(breweries[j].name + breweries[j].website + breweries[j].phone);
+    
     var beerMarker = new mapboxgl.Marker(beerIcon[j], {
     anchor: 'bottom',
     offset: [0, 6]
   })
     .setLngLat([lon, lat])
+    .setPopup(popup)
     .addTo(map);
  }
 }
