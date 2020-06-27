@@ -1,21 +1,21 @@
 $(document).ready(function() {
   //user inputs city name 
-  // var city = prompt("Enter City Name");
   var city;
    //array to store brewery data objects
    var breweries = [];
    //global API key
-  var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b"
+  var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b";
+
+  var brewDataBox = $(".breweryData");
 
   //get city name from search input
-
 $(".searchButton").on("click",function(){
   event.preventDefault();
   city = $(".searchInput").val();
+   //call function to center map
+   centerMap();
   //call function to get brewery data
   getBrewData();
-  //call function to center map
-  centerMap();
   })
 
 //use GEOcoding to center map on city coordinates
@@ -25,9 +25,7 @@ $.ajax({
   url: queryURL,
   method: "GET"
 }).then(function(data){
-  console.log(data);
-  console.log(data.features[1].properties.lat);
-  console.log(data.features[1].properties.lon);
+  // console.log(data);
   //lat and lon of searched city
   var lon = data.features[1].properties.lon;
   var lat = data.features[1].properties.lat;
@@ -36,6 +34,7 @@ $.ajax({
 })
 }
 
+//get data from openBreweryDB API
 function getBrewData(){
     //replace with UI from front end selector
     var perPage = "&per_page=50";
@@ -64,7 +63,18 @@ function getBrewData(){
         console.log(breweries);
         //populate the map with markers
         populateMap();
+        //render brewery data to page
+        renderBrewData();
       })
+}
+
+//Removes breweries with null lat and lon from breweries array
+function arrayCleaner(){
+  for (var i=0; i< breweries.length; i++){
+    if (breweries[i].lat === null || breweries[i].lon === null){
+      breweries.splice(i);
+    }
+  }
 }
 
 //Populates map with markers from breweries array
@@ -86,13 +96,25 @@ function populateMap(){
     }
 }
 
-//Removes breweries with null lat and lon from breweries array
-  function arrayCleaner(){
-    for (var i=0; i< breweries.length; i++){
-      if (breweries[i].lat === null || breweries[i].lon === null){
-        breweries.splice(i);
-      }
-    }
+//Render brewery data to brewDataBox
+
+function renderBrewData(){
+  //iterate through array of breweries
+  for(let i = 0;i<breweries.length;i++){
+    var brewery = $("<li>");
+    brewery.addClass("collection-item");
+    var breweryName = $("<p>");
+    breweryName.text(breweries[i].name);
+    brewery.append(breweryName);
+    var breweryWebsite = $("<a>");
+    breweryWebsite.text(breweries[i].website);
+    breweryWebsite.attr("href", breweries[i].website);
+    brewery.append(breweryWebsite);
+    var breweryPhone = $("<p>");
+    breweryPhone.text(breweries[i].phone);
+    brewery.append(breweryPhone);
+    brewDataBox.prepend(brewery);
   }
+}
 
 })
