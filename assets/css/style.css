@@ -8,8 +8,22 @@ body {
     background-size: cover;
 }
 
+
+
+.introBoxAlign {
+    margin-top: 40%;
+}
+
 .introText {
-    background: rgba(0, 0, 0, .3)
+    background: rgba(0, 0, 0, .4);
+}
+
+.card-title {
+    font-size: 50pt;
+}
+
+#cardText {
+    padding: 8px 0;
 }
 
 .searchBox {
@@ -17,15 +31,10 @@ body {
     align-items: center;
 }
 
-.searchButton {
-
-}
-
-
 footer {
     position: fixed;
     bottom: 0;
-    background-color: rgb(215, 157, 47, .5);
+    background-color:rgba(255,171,64, 0.5);
     width: 100%;
     height: 30px;
 }

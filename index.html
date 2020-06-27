@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&#127867; Hop On</title>
+    <title>&#127867; Brewfinder</title>
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -18,9 +18,9 @@
   </head>
   <body>
     <!-- Nav bar -->
-    <nav class="nav-wrapper transparent">
+    <nav class="nav-wrapper transparent orange-text text-accent-2">
       <div class="container">
-        <a href="#" class="brand-logo">Brewfinder</a>
+        <a href="#" id="brandName" class="brand-logo">Brewfinder</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
           <i class="material-icons">menu</i>
         </a>
@@ -38,7 +38,7 @@
     </nav>
 
     <!--splash page text  -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col s1 l2"></div>
       <div class="col s10 l8">
         <div class="introText">
@@ -55,36 +55,29 @@
         </div>
       </div>
       <div class="col s1 l2"></div>
-    </div>
+    </div> -->
 
     <!-- Search bar -->
     <div class="row">
-        <div class="col s1 l2"></div>
-        <div class="col s10 l8">
-            <div class="introText">
-                <form class="col s12">
-                    <div class="row white searchBox">
-                        <!-- temporary search button -->
-                        <button class="btn searchButton col s2" type="submit" name="action">
-                            <i class="material-icons prefix">search</i>
-                        </button>
-                        <div class="input-field col s10">
-                            
-                            <input type="text" placeholder="Search City" class="searchInput">
-                        </div>
-                    </div>
-                </form>
+        <div class="container">
+        <div class="col s12 l7 introBoxAlign">
+            <div class="card introText">
+                <div class="card-content white-text">
+                    <span class="card-title">Find breweries near you</span>
+                    <p id="cardText">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                </div>
+            <div class="card-action">
+                <a href="mapPage.html">Search Breweries</a>
             </div>
         </div>
-        <div class="col s1 l2"></div>
+        <div class="col s0 l5"></div>
+        </div>
     </div>
     
     
-    <!-- <div class="row search-box">
-      <div class="col s12 l4">
-        
-      </div>
-    </div> -->
+
+            
 
     <!-- <div class="search-box">
             <input class="search-txt" type="text" placeholder="What sounds good?">
