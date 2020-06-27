@@ -11,6 +11,8 @@ $(document).ready(function() {
   //get city name from search input
 $(".searchButton").on("click",function(){
   event.preventDefault();
+    //clear previous searches from list
+    resetMap();
   city = $(".searchInput").val();
    //call function to center map
    centerMap();
@@ -22,6 +24,8 @@ $(".searchButton").on("click",function(){
   $(".searchInput").keyup(function(event){
     if(event.which === 13){
       event.preventDefault();
+      //clear previous searches from list
+      resetMap();
       city = $(".searchInput").val();
       //call function to center map
       centerMap();
@@ -29,6 +33,13 @@ $(".searchButton").on("click",function(){
       getBrewData();
     }
   })
+
+  //reset data function
+  function resetMap(){
+    $(".breweryData").empty();
+    $(".beer").remove();
+    breweries = [];
+  }
 
 //use GEOcoding to center map on city coordinates
 function centerMap(){
