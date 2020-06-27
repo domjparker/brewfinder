@@ -60,3 +60,7 @@ cursor: pointer;
     max-height: 70vh;
     overflow-y: auto;
 }
+
+.searchInput {
+    color: whitesmoke;
+}
