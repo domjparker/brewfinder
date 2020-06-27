@@ -99,6 +99,8 @@ function populateMap(){
 //Render brewery data to brewDataBox
 
 function renderBrewData(){
+  //reveal brewDataBox 
+  brewDataBox.removeClass("hide");
   //iterate through array of breweries
   for(let i = 0;i<breweries.length;i++){
     var brewery = $("<li>");
