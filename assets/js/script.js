@@ -140,7 +140,7 @@ function renderBrewData(){
     var brewery = $("<li>");
     brewery.addClass("collection-item");
     brewery.addClass(i + "beer");
-    brewery.addClass(i + "beer");
+    brewery.addClass("brewList");
     var breweryName = $("<p>");
     breweryName.text(breweries[i].name);
     brewery.append(breweryName);
@@ -156,6 +156,10 @@ function renderBrewData(){
     phoneIcon.addClass("material-icons");
     breweryPhone.addClass("phoneIcon");
     breweryPhone.prepend(phoneIcon);
+    var breweryButton = $("<button>");
+    breweryButton.attr("type", "button");
+    breweryButton.text("Add to Route");
+    brewery.append(breweryButton);
     brewDataBox.prepend(brewery);
   }
 }
