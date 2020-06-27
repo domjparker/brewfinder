@@ -91,21 +91,21 @@ function arrayCleaner(){
 
 //Populates map with markers from breweries array
 function populateMap(){
-    //creates the element for icon
-    for(let j = 0;j<breweries.length;j++){
-      var lat = breweries[j].lat;
-      var lon = breweries[j].lon;
-    var beerIcon2 = document.createElement('div');
-    beerIcon2.classList.add("beer");
-  
-  var airport2 = new mapboxgl.Marker(beerIcon2, {
-      anchor: 'bottom',
-      offset: [0, 6]
-    })
+  //creates the element for icon
+  var beerIcon =[];
+  for(let j = 0;j<breweries.length;j++){
+    var lat = breweries[j].lat;
+    var lon = breweries[j].lon;
+    beerIcon[j] = document.createElement('div');
+    beerIcon[j].classList.add("beer");
+    beerIcon[j].classList.add(j + "beer");
+    var beerMarker = new mapboxgl.Marker(beerIcon[j], {
+    anchor: 'bottom',
+    offset: [0, 6]
+  })
     .setLngLat([lon, lat])
     .addTo(map);
-    
-    }
+ }
 }
 
 //Render brewery data to brewDataBox
@@ -117,6 +117,8 @@ function renderBrewData(){
   for(let i = 0;i<breweries.length;i++){
     var brewery = $("<li>");
     brewery.addClass("collection-item");
+    brewery.addClass(i + "beer");
+    brewery.addClass(i + "beer");
     var breweryName = $("<p>");
     breweryName.text(breweries[i].name);
     brewery.append(breweryName);
