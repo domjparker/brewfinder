@@ -1,0 +1,102 @@
+/* utility hide class  */
+
+.hide {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+}
+
+nav {
+    position: absolute;
+    z-index: 10;
+    padding-top: 10px;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+
+#beerImage {
+    width: 100%;
+    height: auto
+}
+
+#my-map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.my-marker {
+ height: 46px;
+ width: 31px;
+ cursor: pointer;
+}
+.beer {
+height: 69px;
+width: 47px;
+background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372a2d4&size=x-large&icon=beer&apiKey=425ab7232cfd4b4daef2517d6b92595b);
+cursor: pointer;
+}
+
+/* Sidebar */
+#sideBar {
+    margin-top: 68px;
+    max-height: 90vh;
+    background: rgba(0, 0, 0, .5)
+}
+
+@media screen and (max-width: 670px){
+    #sideBar{
+        max-height: 36vh;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .card-content{
+        padding-top: 0 !important;
+    }
+}
+
+
+.searchBox {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 670px){
+    .searchBox{
+        width: 100%;
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+.searchInput {
+    color: whitesmoke;
+}
+
+.breweryData {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 670px){
+    .breweryData{
+         max-height: 23vh;
+    }
+}
+.phoneIcon {
+    display: flex;
+    align-items: center;
+}
