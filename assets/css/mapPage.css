@@ -10,10 +10,11 @@ body {
     overflow-x: hidden;
 }
 
-section {
-    height: 100vh;
+#mapPageRow {
+    margin-bottom: 0px;
 }
 
+/* Navbar */
 nav {
     position: absolute;
     z-index: 10;
@@ -21,7 +22,7 @@ nav {
     text-shadow: 1px 1px 2px #000000;
 }
 
-
+/* Styling for map features */
 #beerImage {
     width: 100%;
     height: auto
@@ -45,58 +46,58 @@ background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372
 cursor: pointer;
 }
 
-/* Sidebar */
+/* Results sidebar */
 #sideBar {
     margin-top: 68px;
     max-height: 90vh;
     background: rgba(0, 0, 0, .5)
 }
 
-@media screen and (max-width: 670px){
-    #sideBar{
-        max-height: 36vh;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 670px){
-    .card-content{
-        padding-top: 0 !important;
-    }
-}
-
-
 .searchBox {
     display: flex;
     align-items: center;
-}
-
-@media screen and (max-width: 670px){
-    .searchBox{
-        width: 100%;
-        margin-left: 0 !important; 
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-    }
 }
 
 .searchInput {
     color: whitesmoke;
 }
 
+/* search input underline color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #ffab40 !important;
+    box-shadow: 0 1px 0 0 #ffab40 !important;
+  }
+
 .breweryData {
     max-height: 70vh;
     overflow-y: auto;
 }
 
-@media screen and (max-width: 670px){
-    .breweryData{
-         max-height: 23vh;
-    }
-}
+
 .phoneIcon {
     display: flex;
     align-items: center;
+}
+
+
+/* Media Queries that affect size and location of results sidebar */
+@media screen and (max-width: 992px){
+    #sideBar{
+        max-height: 36vh;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .card-content{
+        padding-top: 0 !important;
+    }
+    .searchBox{
+        width: 100%;
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+    } 
+    .breweryData {
+        max-height: 23vh;
+    }
 }
