@@ -5,11 +5,12 @@ $(document).ready(function() {
    var breweries = [];
    //global API key
   var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b";
-
+  var selector = null;
   var brewDataBox = $(".breweryData");
+  
 
   //get city name from search input
-$(".searchButton").on("click",function(){
+$(".searchButton").on("click",function(event){
   event.preventDefault();
     //clear previous searches from list
     resetMap();
@@ -18,8 +19,9 @@ $(".searchButton").on("click",function(){
    centerMap();
   //call function to get brewery data
   getBrewData(1);
-  getBrewData(2);
+  //getBrewData(2);
   })
+
 
   //if user presses enter key
   $(".searchInput").keyup(function(event){
@@ -32,7 +34,7 @@ $(".searchButton").on("click",function(){
       centerMap();
       //call function to get brewery data
       getBrewData(1);
-      getBrewData(2)
+      //getBrewData(2)
     }
   })
 
@@ -143,7 +145,7 @@ function renderBrewData(){
     var brewery = $("<li>");
     brewery.addClass("collection-item");
     brewery.addClass(i + "beer");
-    brewery.addClass(i + "beer");
+
     var breweryName = $("<p>");
     breweryName.text(breweries[i].name);
     brewery.append(breweryName);
@@ -162,6 +164,12 @@ function renderBrewData(){
     var breweryButton = $("<button>");
     breweryButton.attr("type", "button");
     breweryButton.text("Add to Route");
+    breweryButton.attr("id", i + "");
+    breweryButton.on("click",function(event){
+      event.preventDefault();
+      selector = $(this).attr("id");
+      console.log(selector);
+    })
     brewery.append(breweryButton);
     brewDataBox.prepend(brewery);
   }
@@ -171,6 +179,8 @@ function renderBrewData(){
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
-
+function generateRoute(){
+  
+}
 })
 
