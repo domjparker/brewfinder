@@ -82,11 +82,26 @@ nav {
  width: 31px;
  cursor: pointer;
 }
+
 .beer {
 height: 69px;
 width: 47px;
 background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372a2d4&size=x-large&icon=beer&apiKey=425ab7232cfd4b4daef2517d6b92595b);
 cursor: pointer;
+}
+
+.addRouteBtn {
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.addRouteBtn:active{
+    background-color:#F2C351;
+}
+
+.addRouteBtn:focus{
+    background-color:#F2C351;
 }
 
 /* Results sidebar */
@@ -126,7 +141,6 @@ cursor: pointer;
     display: flex;
     align-items: center;
 }
-
 
 /* Media Queries that affect size and location of results sidebar */
 @media screen and (max-width: 992px){
