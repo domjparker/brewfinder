@@ -5,11 +5,12 @@ $(document).ready(function() {
    var breweries = [];
    //global API key
   var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b";
-
+  var selectors = [];
   var brewDataBox = $(".breweryData");
+  
 
   //get city name from search input
-$(".searchButton").on("click",function(){
+$(".searchButton").on("click",function(event){
   event.preventDefault();
     //clear previous searches from list
     resetMap();
@@ -18,8 +19,9 @@ $(".searchButton").on("click",function(){
    centerMap();
   //call function to get brewery data
   getBrewData(1);
-  getBrewData(2);
+  //getBrewData(2);
   })
+
 
   //if user presses enter key
   $(".searchInput").keyup(function(event){
@@ -32,7 +34,7 @@ $(".searchButton").on("click",function(){
       centerMap();
       //call function to get brewery data
       getBrewData(1);
-      getBrewData(2)
+      //getBrewData(2)
     }
   })
 
@@ -143,7 +145,7 @@ function renderBrewData(){
     var brewery = $("<li>");
     brewery.addClass("collection-item");
     brewery.addClass(i + "beer");
-    brewery.addClass(i + "beer");
+
     var breweryName = $("<p>");
     breweryName.text(breweries[i].name);
     brewery.append(breweryName);
@@ -163,15 +165,39 @@ function renderBrewData(){
     breweryButton.attr("type", "button");
     breweryButton.addClass("addRouteBtn");
     breweryButton.text("Add to Route");
+    breweryButton.attr("id", i + "");
+    breweryButton.on("click",function(event){
+      event.preventDefault();
+      selector = $(this).attr("id");
+      selectors.push(parseInt(selector));
+      console.log(selectors);
+    })
     brewery.append(breweryButton);
     brewDataBox.prepend(brewery);
   }
 }
 
+$("#displayRoute").click(function(event){
+    event.preventDefault();
+    generateRoute()
+
+})
 // initialization for materialize sidenav in each page
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
-
+function generateRoute(){
+  var string = ""
+  for (var f = 0; f< selectors.length; f++){
+  var y = breweries[selectors[f]].lat;
+  var x = breweries[selectors[f]].lon;
+  if ( f === 0){
+    string = x + "," + y;
+  } else {
+      string = string + "|" + x + "," + y ;
+    }
+  }
+  console.log(string)
+}
 })
 
