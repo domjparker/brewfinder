@@ -20,6 +20,7 @@ nav {
     z-index: 10;
     padding-top: 10px;
     text-shadow: 1px 1px 2px #000000;
+    left: 0;
 }
 
 /* Styling for map features */
@@ -33,6 +34,8 @@ nav {
     top: 0;
     bottom: 0;
     width: 100%;
+    left: 0;
+
 }
 .my-marker {
  height: 46px;
@@ -50,7 +53,8 @@ cursor: pointer;
 #sideBar {
     margin-top: 68px;
     max-height: 90vh;
-    background: rgba(0, 0, 0, .5)
+    background: rgba(0, 0, 0, .5);
+    left: 0;
 }
 
 .searchBox {
@@ -101,3 +105,7 @@ cursor: pointer;
         max-height: 23vh;
     }
 }
+
+/* .drag-target {
+    width: 0px !important;
+} */
