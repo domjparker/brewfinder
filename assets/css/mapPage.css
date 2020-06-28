@@ -25,6 +25,13 @@ nav {
     z-index: 10;
 }
 
+.flex-container {
+    height: 60px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
 .brand-logo {
     font-family: 'Lobster', cursive;
     font-size: 38px;
@@ -38,6 +45,7 @@ nav {
     margin-top: 6px;
 }
 
+/* Sidenav menu when expanded from hamburger */
 #mobile-menu {
     background-color: #F2C351;
 }
@@ -46,14 +54,14 @@ nav {
     font-family: 'Teko', sans-serif;
     font-size: 40px !important;
     text-shadow: 0px 0px 0px ;
+    margin: 20px 0 !important;
 }
 
-.flex-container {
-    height: 60px;
-    width: auto;
-    display: inline-flex;
-    align-items: center;
+/* solves issue of opacity that kept happening on sidenav */
+.sidenav-overlay {
+    opacity: 0 !important;
 }
+
 
 /* Styling for map features */
 #beerImage {
