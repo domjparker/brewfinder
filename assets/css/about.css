@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(https://img.grouponcdn.com/deal/dBpkUh2KZj9RUJPEv5x7/Ku-2048x1242/v1/c700x420.jpg);
+    background-image: url(../imgs/beers-grid-uproxx-1.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -11,6 +11,26 @@ body {
     box-sizing: border-box;
 }
   
+nav {
+    text-shadow: 1px 1px 2px #000000;
+    font-family: 'Teko', sans-serif;
+    font-size: 24px;
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+}
+
+/*.beerMug {
+    margin-top: 20px;
+}
+*/
   .column {
     float: left;
     width: 25%;

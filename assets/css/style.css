@@ -10,10 +10,28 @@ body {
 
 nav {
     text-shadow: 1px 1px 2px #000000;
+    background-color: rgba(180, 180, 180, 0.3);
+    z-index: 10;
+}
+
+.brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
 }
 
 .introBoxAlign {
-    margin-top: 40%;
+    margin-top: 25%;
 }
 
 .introText {
@@ -26,6 +44,9 @@ nav {
 
 #cardText {
     padding: 8px 0;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 24px;
+
 }
 
 .searchBox {
