@@ -39,7 +39,7 @@ nav {
 }
 
 .introText {
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .6);
 }
 
 .card-title {
@@ -52,6 +52,10 @@ nav {
 
 #cardText {
     padding: 8px 0;
+    font-family: 'Cuprum', sans-serif;
+    font-size: 18px;
+    color: whitesmoke
+
 }
 
 .searchBox {
