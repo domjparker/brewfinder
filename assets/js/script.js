@@ -156,6 +156,10 @@ function renderBrewData(){
     phoneIcon.addClass("material-icons");
     breweryPhone.addClass("phoneIcon");
     breweryPhone.prepend(phoneIcon);
+    var breweryButton = $("<button>");
+    breweryButton.attr("type", "button");
+    breweryButton.text("Add to Route");
+    brewery.append(breweryButton);
     brewDataBox.prepend(brewery);
   }
 }
@@ -166,3 +170,4 @@ $(document).ready(function(){
 });
 
 })
+
