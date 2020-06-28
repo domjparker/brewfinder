@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Teko:wght@500&display=swap" rel="stylesheet">
     <!-- Materialize css style sheet -->
     <link
       rel="stylesheet"
@@ -18,21 +20,24 @@
   </head>
   <body>
     <!-- Nav bar -->
-    <nav class="nav-wrapper transparent orange-text text-accent-2">
-      <div class="container">
+    <nav class="nav-wrapper orange-text text-accent-2">
+      <div class="container nav">
+        <div class="flex-container">
+          <img src="assets/imgs/beerMug.svg" alt="beer mug" height="40px" width="40px">
+        </div>
         <a href="#" id="brandName" class="brand-logo">BrewFinder</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mapPage.html">Map</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a class="navLink" href="index.html">Home</a></li>
+          <li><a class="navLink" href="mapPage.html">Map</a></li>
+          <li><a class="navLink" href="about.html">About</a></li>
         </ul>
         <ul class="sidenav grey lighten-2" id="mobile-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mapPage.html">Map</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a class="navLink" href="index.html">Home</a></li>
+          <li><a class="navLink" href="mapPage.html">Map</a></li>
+          <li><a class="navLink" href="about.html">About</a></li>
         </ul>
       </div>
     </nav>
