@@ -123,7 +123,7 @@ function populateMap(){
       anchor: 'bottom',
       offset: [0, -42] // height - shadow
     })
-    .setText(breweries[j].name + breweries[j].website + breweries[j].phone);
+    .setText(breweries[j].name);
     //creates marker
     var beerMarker = new mapboxgl.Marker(beerIcon[j], {
     anchor: 'bottom',
@@ -163,6 +163,7 @@ function renderBrewData(){
     breweryPhone.prepend(phoneIcon);
     var breweryButton = $("<button>");
     breweryButton.attr("type", "button");
+    breweryButton.addClass("addRouteBtn");
     breweryButton.text("Add to Route");
     breweryButton.attr("id", i + "");
     breweryButton.on("click",function(event){
