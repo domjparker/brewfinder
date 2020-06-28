@@ -32,6 +32,23 @@ nav {
     z-index: 10;
 }
 
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: 6px;
+}
+
+#mobile-menu {
+    background-color: #F2C351;
+}
+
+.navMobMenu {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px !important;
+    text-shadow: 0px 0px 0px ;
+}
+
 .brand-logo {
     font-family: 'Lobster', cursive;
     font-size: 38px;

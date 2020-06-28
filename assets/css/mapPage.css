@@ -19,7 +19,6 @@ nav {
     position: absolute;
     z-index: 10;
     /* padding-top: 10px; */
-    /* text-shadow: 1px 1px 2px #000000; */
     left: 0;
     text-shadow: 2px 2px 2px #000;
     background-color: rgba(180, 180, 180, 0.5);
@@ -37,6 +36,16 @@ nav {
     font-size: 26px;
     margin-left: 30px;
     margin-top: 6px;
+}
+
+#mobile-menu {
+    background-color: #F2C351;
+}
+
+.navMobMenu {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px !important;
+    text-shadow: 0px 0px 0px ;
 }
 
 .flex-container {
@@ -85,14 +94,18 @@ cursor: pointer;
     align-items: center;
 }
 
+.searchButton {
+    background-color: #F2C351 !important;
+}
+
 .searchInput {
     color: whitesmoke;
 }
 
 /* search input underline color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #ffab40 !important;
-    box-shadow: 0 1px 0 0 #ffab40 !important;
+    border-bottom: 1px solid #F2C351 !important;
+    box-shadow: 0 1px 0 0 #F2C351 !important;
   }
 
 .breweryData {
