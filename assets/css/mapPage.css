@@ -18,9 +18,32 @@ body {
 nav {
     position: absolute;
     z-index: 10;
-    padding-top: 10px;
-    text-shadow: 1px 1px 2px #000000;
+    /* padding-top: 10px; */
+    /* text-shadow: 1px 1px 2px #000000; */
     left: 0;
+    text-shadow: 2px 2px 2px #000;
+    background-color: rgba(180, 180, 180, 0.5);
+    z-index: 10;
+}
+
+.brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: 6px;
+}
+
+.flex-container {
+    height: 60px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Styling for map features */
