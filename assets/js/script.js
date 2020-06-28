@@ -140,7 +140,7 @@ function renderBrewData(){
     var brewery = $("<li>");
     brewery.addClass("collection-item");
     brewery.addClass(i + "beer");
-    brewery.addClass("brewList");
+    brewery.addClass(i + "beer");
     var breweryName = $("<p>");
     breweryName.text(breweries[i].name);
     brewery.append(breweryName);
@@ -156,12 +156,13 @@ function renderBrewData(){
     phoneIcon.addClass("material-icons");
     breweryPhone.addClass("phoneIcon");
     breweryPhone.prepend(phoneIcon);
-    var breweryButton = $("<button>");
-    breweryButton.attr("type", "button");
-    breweryButton.text("Add to Route");
-    brewery.append(breweryButton);
     brewDataBox.prepend(brewery);
   }
 }
+
+// initialization for materialize sidenav in each page
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
 
 })
