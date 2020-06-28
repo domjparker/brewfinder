@@ -8,6 +8,8 @@
     <title>&#127867; BrewFinder</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Teko:wght@500&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Custom CSS-->
@@ -15,24 +17,27 @@
 </head>
 <body>
     <!-- map results section-->
-    <section id="mapResultsSection">
-        <div class="row">
+    <section>
+        <div class="row" id="mapPageRow">
           <div class="col s12 l12">
-            <nav class="nav-wrapper transparent">
-              <div class="container">
-                <a href="#" class="brand-logo">BrewFinder</a>
+            <nav class="nav-wrapper orange-text text-accent-2">
+              <div class="container nav">
+                <div class="flex-container">
+                  <img src="assets/imgs/beerMug.svg" alt="beer mug" height="40px" width="40px">
+                </div>
+                <a href="#" id="brandName" class="brand-logo">BrewFinder</a>
                 <a href="#" class="sidenav-trigger" data-target="mobile-menu">
                   <i class="material-icons">menu</i>
                 </a>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="mapPage.html">Map</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li><a class="navLink" href="index.html">Home</a></li>
+                  <li><a class="navLink" href="mapPage.html">Map</a></li>
+                  <li><a class="navLink" href="about.html">About</a></li>
                 </ul>
                 <ul class="sidenav grey lighten-2" id="mobile-menu">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="mapPage.html">Map</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li><a class="navLink" href="index.html">Home</a></li>
+                  <li><a class="navLink" href="mapPage.html">Map</a></li>
+                  <li><a class="navLink" href="about.html">About</a></li>
                 </ul>
               </div>
             </nav>
@@ -61,7 +66,7 @@
                     <div class="card-content">
                         <!-- search input in sidebar -->
                           <div class="row searchBox">
-                            <button class="btn searchButton col s2" type="submit" name="action">
+                            <button class="btn searchButton orange accent-2 col s2" type="submit" name="action">
                               <i class="material-icons prefix">search</i>
                             </button>
                             <div class="input-field col s10">

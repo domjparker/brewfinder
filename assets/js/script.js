@@ -17,7 +17,8 @@ $(".searchButton").on("click",function(){
    //call function to center map
    centerMap();
   //call function to get brewery data
-  getBrewData();
+  getBrewData(1);
+  getBrewData(2);
   })
 
   //if user presses enter key
@@ -30,7 +31,8 @@ $(".searchButton").on("click",function(){
       //call function to center map
       centerMap();
       //call function to get brewery data
-      getBrewData();
+      getBrewData(1);
+      getBrewData(2)
     }
   })
 
@@ -58,10 +60,10 @@ $.ajax({
 }
 
 //get data from openBreweryDB API
-function getBrewData(){
+function getBrewData(x){
     //replace with UI from front end selector
     var perPage = "&per_page=50";
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city + perPage;
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city +"&page="+ x + "&per_page=50";
 
     $.ajax({
         url: queryURL,
@@ -89,6 +91,7 @@ function getBrewData(){
         //render brewery data to page
         renderBrewData();
       })
+
 }
 
 //Removes breweries with null lat and lon from breweries array
@@ -110,17 +113,17 @@ function populateMap(){
     beerIcon[j] = document.createElement('div');
     beerIcon[j].classList.add("beer");
     beerIcon[j].classList.add(j + "beer");
-    
+    //creates popup
     var popup = new mapboxgl.Popup({
       anchor: 'bottom',
       offset: [0, -42] // height - shadow
     })
     .setText(breweries[j].name + breweries[j].website + breweries[j].phone);
-    
+    //creates marker
     var beerMarker = new mapboxgl.Marker(beerIcon[j], {
     anchor: 'bottom',
     offset: [0, 6]
-  })
+  })//places marker and popup on map
     .setLngLat([lon, lat])
     .setPopup(popup)
     .addTo(map);
@@ -160,6 +163,11 @@ function renderBrewData(){
     brewDataBox.prepend(brewery);
   }
 }
+
+// initialization for materialize sidenav in each page
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
 
 })
 

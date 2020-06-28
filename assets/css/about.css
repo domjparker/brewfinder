@@ -25,6 +25,32 @@ body {
     display: table;
     clear: both;
 }
+
+nav {
+    text-shadow: 2px 2px 2px #000;
+    background-color: rgba(180, 180, 180, 0.3);
+    z-index: 10;
+}
+
+.brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: 6px;
+}
+
+.flex-container {
+    height: 100%;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+}
   
     @media screen and (max-width: 600px) {
     .column {
@@ -32,6 +58,12 @@ body {
       display: block;
       margin-bottom: 20px;
     }
+
+    body {
+        background-attachment: none;
+        background-position: right;
+    }
+
 }
 
 #bodyText {
@@ -54,7 +86,7 @@ body {
 footer {
     position: fixed;
     bottom: 0;
-    background-color:rgba(255,171,64, 0.5);
+    background-color:rgba(242, 195, 81, 0.5);
     width: 100%;
     height: 30px;
 }
