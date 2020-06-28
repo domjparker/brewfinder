@@ -5,7 +5,7 @@ $(document).ready(function() {
    var breweries = [];
    //global API key
   var apikey = "&apiKey=425ab7232cfd4b4daef2517d6b92595b";
-  var selector = null;
+  var selectors = [];
   var brewDataBox = $(".breweryData");
   
 
@@ -169,19 +169,35 @@ function renderBrewData(){
     breweryButton.on("click",function(event){
       event.preventDefault();
       selector = $(this).attr("id");
-      console.log(selector);
+      selectors.push(parseInt(selector));
+      console.log(selectors);
     })
     brewery.append(breweryButton);
     brewDataBox.prepend(brewery);
   }
 }
 
+$("#displayRoute").click(function(event){
+    event.preventDefault();
+    generateRoute()
+
+})
 // initialization for materialize sidenav in each page
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
 function generateRoute(){
-  
+  var string = ""
+  for (var f = 0; f< selectors.length; f++){
+  var y = breweries[selectors[f]].lat;
+  var x = breweries[selectors[f]].lon;
+  if ( f === 0){
+    string = x + "," + y;
+  } else {
+      string = string + "|" + x + "," + y ;
+    }
+  }
+  console.log(string)
 }
 })
 
