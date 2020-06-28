@@ -45,19 +45,22 @@ $(".searchButton").on("click",function(){
 
 //use GEOcoding to center map on city coordinates
 function centerMap(){
-var queryURL =  "https://api.geoapify.com/v1/geocode/search?text=" + city + "&type=city" + apikey;
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function(data){
-  // console.log(data);
-  //lat and lon of searched city
-  var lon = data.features[1].properties.lon;
-  var lat = data.features[1].properties.lat;
-  // map zooms to city coordinates
-  map.flyTo({center: [lon,lat], zoom: 9})
-})
-}
+  //restric results to west coast
+  var westCoast = "&bias=rect:-130.20324685239348,29.38890919715537,-101.11144997739359,51.94902867991925|countrycode:us,ca";
+  var queryURL =  "https://api.geoapify.com/v1/geocode/search?text=" + city + "&type=city" + westCoast + apikey;
+  console.log(queryURL);
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(data){
+    // console.log(data);
+    //lat and lon of searched city
+    var lon = data.features[1].properties.lon;
+    var lat = data.features[1].properties.lat;
+    // map zooms to city coordinates
+    map.flyTo({center: [lon,lat], zoom: 9})
+  })
+  }
 
 //get data from openBreweryDB API
 function getBrewData(x){
