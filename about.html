@@ -4,8 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>&#127867; Brewfinder</title>
     <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Teko:wght@500&display=swap" rel="stylesheet">
+    <!--Additional Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Titillium+Web:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <!-- Materialize css style sheet -->
     <link
       rel="stylesheet"
@@ -15,61 +18,81 @@
   </head>
   <body>
     <!-- Nav bar -->
-    <nav class="nav-wrapper transparent orange-text text-accent-2">
-      <div class="container">
+    <nav class="nav-wrapper orange-text text-accent-2">
+      <div class="container nav">
+        <div class="flex-container">
+          <img src="assets/imgs/beerMug.svg" alt="beer mug" height="40px" width="40px">
+        </div>
         <a href="#" id="brandName" class="brand-logo">BrewFinder</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
           <i class="material-icons">menu</i>
         </a>
-        <ul class="right hide-on-med-and-down">˙
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mapPage.html">Map</a></li>
-          <li><a href="#">About</a></li>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="navLink" href="index.html">Home</a></li>
+          <li><a class="navLink" href="mapPage.html">Map</a></li>
+          <li><a class="navLink" href="about.html">About</a></li>
         </ul>
-        <ul class="sidenav grey lighten-2" id="mobile-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mapPage.html">Map</a></li>
-          <li><a href="#">About</a></li>
+        <ul class="sidenav" id="mobile-menu">
+          <li><a class="navMobMenu" href="index.html">Home</a></li>
+          <li><a class="navMobMenu" href="mapPage.html">Map</a></li>
+          <li><a class="navMobMenu" href="about.html">About</a></li>
         </ul>
       </div>
     </nav>
+    
 <!--Profile cards-->
-    <h2>Meet the team</h2>
-
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <h3>Dominic Parker</h3>
-      <p>City, State</p>
-      <p>Favorite Beer: Ranier</p>
+    <div class="row">
+        <div class="card-container" id="bodyText">
+          <h1 id="aboutHeader">About the Team</h1>
+         <h5 id="quote">"The best beers are the ones we drink with friends"</h5>   
+        </div>
     </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <h3>Nick Mardon</h3>
-      <p>City, State</p>
-      <p>Favorite Beer: Ranier</p>
+    <div class="row">
+        <div class="container">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <img class="aboutImg" src="assets/imgs/dominic.jpg" class="bioPic" alt="bio pic">    
+                        <h5 class="name">Dominic Parker</h5>
+                        <h6 class="jobDescription">Web Design<br>Front-End Developer</h6>
+                          <div class="overlay">  
+                            <div class="funFact text">Seattle, WA<br>Favorite Beer: Space Dust</div>
+                          </div>
+                    </div>
+                </div> 
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <img class="aboutImg" src="assets/imgs/nicholas.jpeg" class="bioPic" alt="bio pic">
+                        <h5 class="name">Nick Mardon</h5>
+                        <h6 class="jobDescription">Full Stack Developer<br>Project Manager</h6>
+                          <div class="overlay">
+                            <div class="funFact text">Snoqualmie, WA<br>Favorite Beer: Blue Moon</div>
+                          </div>        
+                    </div>
+                </div>
+                
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <img class="aboutImg" src="assets/imgs/michael.jpg" class="bioPic" alt="bio pic">
+                        <h5 class="name">Michael Rettus II</h5>
+                        <h6 class="jobDescription">Back End Developer</h6>
+                          <div class="overlay">
+                            <div class="funFact text">Oak Harbor, WA<br>Favorite Beer: Black Butte Porter</div>
+                          </div>  
+                    </div>
+                </div>
+            
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <img class="aboutImg" src="assets/imgs/martin.jpeg" class="bioPic" alt="bio pic">
+                        <h5 class="name">Martin Mudlin</h5>
+                        <h6 class="jobDescription">Web Design<br>Front-End Developer</h6>
+                          <div class="overlay">
+                            <div class="funFact text">Seattle, WA<br>Favorite Beer: Ranier</div>  
+                          </div>    
+                    </div>
+                </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <h3>Michael Rettus II</h3>
-      <p>City, State</p>
-      <p>Favorite Beer: Ranier</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <h3>Martin Mudlin</h3>
-      <p>City, State</p>
-      <p>Favorite Beer: Ranier</p>
-    </div>
-  </div>
-</div>
-
  
     <footer>
       <div class="footer">

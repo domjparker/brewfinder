@@ -4,24 +4,69 @@
     display: none;
 }
 
+/* body css */
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-section {
-    height: 100vh;
+#mapPageRow {
+    margin-bottom: 0px;
 }
 
+/* Navbar */
 nav {
     position: absolute;
+    z-index: 1;
+    /* padding-top: 10px; */
+    left: 0;
+    text-shadow: 2px 2px 2px #000;
+    background-color: rgba(180, 180, 180, 0.5);
+}
+
+.flex-container {
+    height: 60px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
+    padding-top: 6px;
+}
+
+/* Sidenav menu when expanded from hamburger */
+#mobile-menu {
+    background-color: #F2C351;
+}
+
+.navMobMenu {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px !important;
+    text-shadow: 0px 0px 0px ;
+    margin: 20px 0 !important;
     z-index: 10;
-    padding-top: 10px;
-    text-shadow: 1px 1px 2px #000000;
+}
+
+/* solves issue of opacity that kept happening on sidenav */
+.sidenav-overlay {
+    opacity: 0 !important;
+    z-index: 0;
 }
 
 
+/* Styling for map features */
 #beerImage {
     width: 100%;
     height: auto
@@ -32,12 +77,15 @@ nav {
     top: 0;
     bottom: 0;
     width: 100%;
+    left: 0;
+
 }
 .my-marker {
- height: 46px;
- width: 31px;
- cursor: pointer;
+    height: 46px;
+    width: 31px;
+    cursor: pointer;
 }
+
 .beer {
 height: 69px;
 width: 47px;
@@ -45,58 +93,84 @@ background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372
 cursor: pointer;
 }
 
-/* Sidebar */
+.addRouteBtn {
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.addRouteBtn:active{
+    background-color:#F2C351;
+}
+
+/* Results sidebar */
 #sideBar {
     margin-top: 68px;
     max-height: 90vh;
-    background: rgba(0, 0, 0, .5)
+    background: rgba(0, 0, 0, .5);
+    left: 0;
 }
-
-@media screen and (max-width: 670px){
-    #sideBar{
-        max-height: 36vh;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 670px){
-    .card-content{
-        padding-top: 0 !important;
-    }
-}
-
 
 .searchBox {
     display: flex;
     align-items: center;
 }
 
-@media screen and (max-width: 670px){
-    .searchBox{
-        width: 100%;
-        margin-left: 0 !important; 
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-    }
+.searchButton {
+    background-color: #F2C351 !important;
 }
 
 .searchInput {
     color: whitesmoke;
 }
 
+#displayRoute {
+    padding: 8px;
+    font-weight: 600;
+    text-shadow: 0 0 1px black;
+    color: white;
+    background-color: #F2C351;
+}
+
+/* search input underline color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #F2C351 !important;
+    box-shadow: 0 1px 0 0 #F2C351 !important;
+  }
+
 .breweryData {
     max-height: 70vh;
     overflow-y: auto;
 }
 
-@media screen and (max-width: 670px){
-    .breweryData{
-         max-height: 23vh;
-    }
-}
+
 .phoneIcon {
     display: flex;
     align-items: center;
+}
+
+/* Media Queries that affect size and location of results sidebar */
+@media screen and (max-width: 992px){
+    #sideBar{
+        max-height: 36vh;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .card-content{
+        padding-top: 0 !important;
+    }
+    .searchBox{
+        width: 100%;
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+    } 
+    .breweryData {
+        max-height: 23vh;
+    }
+
+    #beerMugSVG {
+        margin: 0 5%;
+    }
 }

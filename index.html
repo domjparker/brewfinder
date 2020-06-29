@@ -6,85 +6,66 @@
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Teko:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
     <!-- Materialize css style sheet -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <!-- Custom css file -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
   <body>
+
+    <!-- Background video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="assets/imgs/beervideoforproject1.mp4" type="video/mp4">
+    </video>
+
     <!-- Nav bar -->
-    <nav class="nav-wrapper transparent orange-text text-accent-2">
-      <div class="container">
+    <nav class="nav-wrapper">
+      <div class="container nav">
+        <div class="flex-container">
+          <img id="beerMugSVG" src="assets/imgs/beerMug.svg" alt="beer mug" height="40px" width="40px">
+        </div>
         <a href="#" id="brandName" class="brand-logo">BrewFinder</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mapPage.html">Map</a></li>
-          <li><a href="#">About</a></li>
+          <li><a class="navLink" href="index.html">Home</a></li>
+          <li><a class="navLink" href="mapPage.html">Map</a></li>
+          <li><a class="navLink" href="about.html">About</a></li>
         </ul>
-        <ul class="sidenav grey lighten-2" id="mobile-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mapPage.html">Map</a></li>
-          <li><a href="#">About</a></li>
+        <ul class="sidenav" id="mobile-menu">
+        <li><a class="navMobMenu" href="index.html">Home</a></li>
+        <li><a class="navMobMenu" href="mapPage.html">Map</a></li>
+        <li><a class="navMobMenu" href="about.html">About</a></li>
         </ul>
       </div>
     </nav>
 
-    <!--splash page text  -->
-    <!-- <div class="row">
-      <div class="col s1 l2"></div>
-      <div class="col s10 l8">
-        <div class="introText">
-          <h1>Find Breweries Near You</h1>
-          <h6>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            exercitationem ipsam qui ratione dolore obcaecati adipisci eveniet
-            eos. Eius at magni possimus quae tempore cum culpa ullam sapiente
-            tenetur eos. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Vel, consequatur, odio asperiores quis voluptatem, blanditiis
-            doloribus exercitationem eaque corporis officia consequuntur magni
-            dignissimos. Necessitatibus quas unde est pariatur beatae earum?
-          </h6>
-        </div>
-      </div>
-      <div class="col s1 l2"></div>
-    </div> -->
-
     <!-- Search bar -->
     <div class="row">
         <div class="container">
-        <div class="col s12 l7 introBoxAlign">
+        <div class="col s12 m9 l7">
+          <div class="introBoxAlign">
             <div class="card introText">
                 <div class="card-content white-text">
-                    <span class="card-title">Find breweries near you</span>
-                    <p id="cardText">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                    <span id="cardHeader" class="card-title">Find breweries near you</span>
+                    <p id="cardText">Beer culture plays a huge part in the world of food and drink. It’s not just a commodity in cans and glass, but a reflection of who the people are that call that city home. Let BrewFinder help you explore and drink like a local.</p>
                 </div>
-            <div class="card-action">
-                <a href="mapPage.html">Search Breweries</a>
+            <div id="searchButtonDiv" class="card-action">
+                <a id="searchButton" href="mapPage.html">Search Breweries</a>
             </div>
+          </div>
         </div>
         <div class="col s0 l5"></div>
         </div>
     </div>
-    
-    
 
-            
-
-    <!-- <div class="search-box">
-            <input class="search-txt" type="text" placeholder="What sounds good?">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-                </button>
-        </div> -->
     <footer>
       <div class="footer">
         <p>Please Drink Responsibly. Please Don't Drink & Drive.</p>

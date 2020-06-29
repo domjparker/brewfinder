@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(https://img.grouponcdn.com/deal/dBpkUh2KZj9RUJPEv5x7/Ku-2048x1242/v1/c700x420.jpg);
+    background-image: url(../imgs/beerbeerbeer.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -25,34 +25,129 @@ body {
     display: table;
     clear: both;
 }
-  
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
+
+/* Navbar */
+nav {
+    text-shadow: 2px 2px 2px #000;
+    background-color: rgba(180, 180, 180, 0.3);
+    z-index: 10;
 }
 
-h2 {
-    text-align: center;
-    color: ;
+.flex-container {
+    height: 100%;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
+    padding-top: 6px;
+}
+
+/* Sidenav menu when expanded from hamburger */
+#mobile-menu {
+    background-color: #F2C351;
+}
+
+.navMobMenu {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px !important;
+    text-shadow: 0px 0px 0px ;
+    margin: 20px 0 !important;
 }
   
-  .card {
+ body {
+    background-attachment: none;
+    background-position: right;
+    }
+
+ #aboutHeader {
+     font-size: 56px;
+     font-weight: 600;
+     font-family: 'Titillium Web', sans-serif;
+ }   
+    
+#quote{
+    font-family: 'Kalam', cursive;
+    text-align: center;
+
+}
+
+#bodyText {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    color: black;
+    text-shadow: 1px 1px 2px whitesmoke;
+    /* background-color: rgba(180, 180, 180, 0.2); */
+    width: 100%;
+    /* border-radius: 10%; */
+    padding-bottom: 30px;
+}
+  
+.card-container {
+    position: relative;
+    width: 50%;
+    display: flex;
+  }
+
+.aboutImg {
+    height: 200px;
+    width: auto;
+    max-width: 100%;
+}
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
+    text-shadow: 2px 2px 1px black;
+    padding: 30px 20px 20px 20px;
     height: 400px;
     text-align: center;
-    background-color: rgba(228, 228, 228, 0.5)
+    background-color: rgba(0, 0, 0, .7);
+    overflow-y: hidden;
     
 }
 
+.name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600 !important;
+    color: whitesmoke;
+}
+
+.jobDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+.funFact {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+.bioPic {
+    display: block;
+    max-width: 100%;
+    max-height: 100%:
+}
 
 footer {
     position: fixed;
     bottom: 0;
-    background-color:rgba(255,171,64, 0.5);
+    background-color:rgba(242, 195, 81, 0.5);
     width: 100%;
     height: 30px;
 }
@@ -62,4 +157,3 @@ footer {
     padding: 0;
     font-size: 10px;
 }
-
