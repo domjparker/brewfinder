@@ -162,6 +162,10 @@ cursor: pointer;
     .breweryData {
         max-height: 23vh;
     }
+
+    #beerMugSVG {
+        margin: 0 5%;
+    }
 }
 
 /* .drag-target {
