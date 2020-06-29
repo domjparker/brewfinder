@@ -52,7 +52,7 @@ function centerMap(){
   //restric results to west coast
   var westCoast = "&bias=rect:-130.20324685239348,29.38890919715537,-101.11144997739359,51.94902867991925|countrycode:us,ca";
   var queryURL =  "https://api.geoapify.com/v1/geocode/search?text=" + city + "&type=city" + westCoast + apikey;
-  console.log(queryURL);
+  // console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -77,7 +77,7 @@ function getBrewData(x){
         method: "GET"
       }).then(function(response) {
         //remove console log before final release
-        console.log(response);
+        // console.log(response);
         //iterates through array of breweries creating objects and filling array for program use
         for (var i=0; i < response.length; i++){
             var breweryData = {
@@ -92,7 +92,7 @@ function getBrewData(x){
             arrayCleaner();
         }
         //remove console log before final release
-        console.log(breweries);
+        // console.log(breweries);
         //populate the map with markers
         populateMap();
         //render brewery data to page
@@ -202,7 +202,7 @@ function generateRoute(){
       string = string + "|" + x + "," + y ;
     }
   }
-  console.log(string)
+  // console.log(string);
   addRouteMarkers();
 }
 
@@ -210,7 +210,7 @@ var routeMarkers = [];
 
 function displayRoute(string){
   queryURL = "https://api.geoapify.com/v1/routing?waypoints=" + string +  "&mode=drive" + apikey;
-  console.log(queryURL);
+  // console.log(queryURL);
 
   $.ajax({
     url: queryURL,
@@ -221,7 +221,7 @@ function displayRoute(string){
       routeMarkers.push(data.properties.waypoints[v]);
       // console.log(routeMarkers);
     };
-    console.log(routeMarkers);
+    // console.log(routeMarkers);
     //remove old markers from page
     
     //addRouteMarkers();
@@ -235,8 +235,8 @@ function addRouteMarkers(){
   for(let j = 0;j<selectors.length;j++){
     var lat = breweries[selectors[j]].lat;
     var lon = breweries[selectors[j]].lon;
-    console.log(lat);
-    console.log(lon);
+    // console.log(lat);
+    // console.log(lon);
     beerIcon[selectors[j]] = document.createElement('div');
     beerIcon[selectors[j]].classList.add("beer");
     beerIcon[selectors[j]].classList.add(j + "beer2");
