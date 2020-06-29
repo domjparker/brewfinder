@@ -19,11 +19,17 @@ nav {
     position: absolute;
     z-index: 10;
     /* padding-top: 10px; */
-    /* text-shadow: 1px 1px 2px #000000; */
     left: 0;
     text-shadow: 2px 2px 2px #000;
     background-color: rgba(180, 180, 180, 0.5);
     z-index: 10;
+}
+
+.flex-container {
+    height: 60px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
 }
 
 .brand-logo {
@@ -39,12 +45,23 @@ nav {
     margin-top: 6px;
 }
 
-.flex-container {
-    height: 60px;
-    width: auto;
-    display: inline-flex;
-    align-items: center;
+/* Sidenav menu when expanded from hamburger */
+#mobile-menu {
+    background-color: #F2C351;
 }
+
+.navMobMenu {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px !important;
+    text-shadow: 0px 0px 0px ;
+    margin: 20px 0 !important;
+}
+
+/* solves issue of opacity that kept happening on sidenav */
+.sidenav-overlay {
+    opacity: 0 !important;
+}
+
 
 /* Styling for map features */
 #beerImage {
@@ -65,11 +82,26 @@ nav {
  width: 31px;
  cursor: pointer;
 }
+
 .beer {
 height: 69px;
 width: 47px;
 background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2372a2d4&size=x-large&icon=beer&apiKey=425ab7232cfd4b4daef2517d6b92595b);
 cursor: pointer;
+}
+
+.addRouteBtn {
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.addRouteBtn:active{
+    background-color:#F2C351;
+}
+
+.addRouteBtn:focus{
+    background-color:#F2C351;
 }
 
 /* Results sidebar */
@@ -85,14 +117,18 @@ cursor: pointer;
     align-items: center;
 }
 
+.searchButton {
+    background-color: #F2C351 !important;
+}
+
 .searchInput {
     color: whitesmoke;
 }
 
 /* search input underline color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #ffab40 !important;
-    box-shadow: 0 1px 0 0 #ffab40 !important;
+    border-bottom: 1px solid #F2C351 !important;
+    box-shadow: 0 1px 0 0 #F2C351 !important;
   }
 
 .breweryData {
@@ -105,7 +141,6 @@ cursor: pointer;
     display: flex;
     align-items: center;
 }
-
 
 /* Media Queries that affect size and location of results sidebar */
 @media screen and (max-width: 992px){

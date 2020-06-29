@@ -26,10 +26,37 @@ body {
     clear: both;
 }
 
+/* Navbar */
 nav {
     text-shadow: 2px 2px 2px #000;
     background-color: rgba(180, 180, 180, 0.3);
     z-index: 10;
+}
+
+.flex-container {
+    height: 100%;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navLink {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: 6px;
+}
+
+/* Sidenav menu when expanded from hamburger */
+#mobile-menu {
+    background-color: #F2C351;
+}
+
+.navMobMenu {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px !important;
+    text-shadow: 0px 0px 0px ;
+    margin: 20px 0 !important;
 }
 
 .brand-logo {
@@ -45,12 +72,6 @@ nav {
     margin-top: 6px;
 }
 
-.flex-container {
-    height: 100%;
-    width: auto;
-    display: inline-flex;
-    align-items: center;
-}
   
     /*@media screen and (max-width: 600px) {
     .column {
