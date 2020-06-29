@@ -17,12 +17,11 @@ body {
 /* Navbar */
 nav {
     position: absolute;
-    z-index: 10;
+    z-index: 1;
     /* padding-top: 10px; */
     left: 0;
     text-shadow: 2px 2px 2px #000;
     background-color: rgba(180, 180, 180, 0.5);
-    z-index: 10;
 }
 
 .flex-container {
@@ -55,11 +54,13 @@ nav {
     font-size: 40px !important;
     text-shadow: 0px 0px 0px ;
     margin: 20px 0 !important;
+    z-index: 10;
 }
 
 /* solves issue of opacity that kept happening on sidenav */
 .sidenav-overlay {
     opacity: 0 !important;
+    z-index: 0;
 }
 
 
