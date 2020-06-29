@@ -50,7 +50,6 @@ nav {
     width: auto;
     display: inline-flex;
     align-items: center;
-    padding-left: 13%;
 }
   
     /*@media screen and (max-width: 600px) {
@@ -65,14 +64,61 @@ nav {
         background-attachment: none;
         background-position: right;
     }
+    
+h2{
+    font-family: 'Kalam', cursive;
+    text-align: center;
 
 }
 
 #bodyText {
+    display: block;
     text-align: center;
 }
   
-  .card {
+
+
+.card-container {
+    position: relative;
+    width: 50%;
+    display: flex;
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 171, 64, .7);
+  }
+  
+  .card-container:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px, 2px, 2px, #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     height: 350px;
@@ -86,29 +132,6 @@ nav {
     max-width: 100%;
     max-height: 100%:
 }
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-
-.container:hover .overlay {
-        opacity: 1;
-
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
 
 footer {
     position: fixed;
