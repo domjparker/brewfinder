@@ -50,7 +50,7 @@ nav {
     font-family: 'Teko', sans-serif;
     font-size: 26px;
     margin-left: 30px;
-    margin-top: 6px;
+    padding-top: 6px;
 }
 
 /* Sidenav menu when expanded from hamburger */
@@ -65,21 +65,10 @@ nav {
     margin: 20px 0 !important;
 }
   
-    /*@media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+ body {
+    background-attachment: none;
+    background-position: right;
     }
-    */
-
-    body {
-        background-attachment: none;
-        background-position: right;
-    }
-
-
-
 
  #aboutHeader {
      font-size: 56px;
@@ -105,47 +94,11 @@ nav {
     padding-bottom: 30px;
 }
   
-
-
 .card-container {
     position: relative;
     width: 50%;
     display: flex;
   }
-
-  /* .image {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: rgba(255, 171, 64, .7);
-  }
-  
-  .card-container:hover .overlay {
-    opacity: 1;
-  }
-  
-  .text {
-    color: white;
-    font-size: 20px;
-    text-shadow: 2px, 2px, 2px, #000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-  } */
 
 .aboutImg {
     height: 200px;
@@ -156,30 +109,31 @@ nav {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-shadow: 2px 2px 1px black;
-    padding: 16px;
+    padding: 30px 20px 20px 20px;
     height: 400px;
     text-align: center;
     background-color: rgba(0, 0, 0, .7);
+    overflow-y: hidden;
     
 }
 
 .name {
     font-family: 'Open Sans', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 600 !important;
     color: whitesmoke;
 }
 
 .jobDescription {
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     color: whitesmoke;
 }
 
 .funFact {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: whitesmoke;
 }
@@ -203,4 +157,3 @@ footer {
     padding: 0;
     font-size: 10px;
 }
-

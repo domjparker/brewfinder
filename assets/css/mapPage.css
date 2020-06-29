@@ -4,6 +4,8 @@
     display: none;
 }
 
+/* body css */
+
 body {
     margin: 0;
     padding: 0;
@@ -41,7 +43,7 @@ nav {
     font-family: 'Teko', sans-serif;
     font-size: 26px;
     margin-left: 30px;
-    margin-top: 6px;
+    padding-top: 6px;
 }
 
 /* Sidenav menu when expanded from hamburger */
@@ -172,7 +174,3 @@ cursor: pointer;
         margin: 0 5%;
     }
 }
-
-/* .drag-target {
-    width: 0px !important;
-} */
