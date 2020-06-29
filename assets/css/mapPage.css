@@ -78,9 +78,9 @@ nav {
 
 }
 .my-marker {
- height: 46px;
- width: 31px;
- cursor: pointer;
+    height: 46px;
+    width: 31px;
+    cursor: pointer;
 }
 
 .beer {
