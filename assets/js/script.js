@@ -152,6 +152,7 @@ function renderBrewData(){
     brewery.append(breweryName);
     var breweryWebsite = $("<a>");
     breweryWebsite.text(breweries[i].website);
+    breweryWebsite.attr("target","_blank");
     breweryWebsite.attr("href", breweries[i].website);
     brewery.append(breweryWebsite);
     var breweryPhone = $("<p>");
