@@ -63,11 +63,15 @@ nav {
 
 
 .introBoxAlign {
-    margin-top: 10%;
+    margin-top: 50%;
+    display: flex;
+    align-items: center;
 }
 
 .introText {
     background: rgba(0, 0, 0, .4);
+    /* display: flex;
+    align-items: center; */
 }
 
 .card-title {
