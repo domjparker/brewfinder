@@ -101,10 +101,6 @@ cursor: pointer;
     background-color:#F2C351;
 }
 
-.addRouteBtn:focus{
-    background-color:#F2C351;
-}
-
 /* Results sidebar */
 #sideBar {
     margin-top: 68px;
@@ -124,6 +120,14 @@ cursor: pointer;
 
 .searchInput {
     color: whitesmoke;
+}
+
+#displayRoute {
+    padding: 8px;
+    font-weight: 600;
+    text-shadow: 0 0 1px black;
+    color: white;
+    background-color: #F2C351;
 }
 
 /* search input underline color */

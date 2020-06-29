@@ -41,6 +41,7 @@ $(".searchButton").on("click",function(event){
   //reset data function
   function resetMap(){
     $(".breweryData").empty();
+    brewDataBox.addClass("hide");
     $(".beer").remove();
     breweries = [];
   }
@@ -168,6 +169,7 @@ function renderBrewData(){
     breweryButton.attr("id", i + "");
     breweryButton.on("click",function(event){
       event.preventDefault();
+      $(this).css("background-color", "#F2C351");
       selector = $(this).attr("id");
       selectors.push(parseInt(selector));
       console.log(selectors);
