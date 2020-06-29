@@ -50,7 +50,7 @@ nav {
 }
 
 /* Sidenav menu when expanded from hamburger */
-#mobile-menu {
+.sidenav {
     background-color: #F2C351;
 }
 
@@ -61,9 +61,15 @@ nav {
     margin: 20px 0 !important;
 }
 
+/* solves issue of opacity that kept happening on sidenav */
+.sidenav-overlay {
+    opacity: 0 !important;
+}
 
 .introBoxAlign {
-    margin-top: 10%;
+    margin-top: 25%;
+    display: flex;
+    align-items: center;
 }
 
 .introText {
@@ -74,14 +80,26 @@ nav {
     font-size: 50pt;
 }
 
+#cardHeader {
+    font-size: 45px; 
+    font-family: 'Cuprum', sans-serif;
+}
+
 #searchButton {
     color: rgb(242, 195, 81);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#searchButtonDiv:hover {
+    background-color: rgba(180, 180, 180, 0.3);
 }
 
 #cardText {
     padding: 8px 0;
     font-family: 'Cuprum', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 400;
     color: whitesmoke
 
 }
