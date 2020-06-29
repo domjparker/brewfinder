@@ -189,8 +189,8 @@ $(document).ready(function(){
 function generateRoute(){
   var string = ""
   for (var f = 0; f< selectors.length; f++){
-  var y = breweries[selectors[f]].lat;
-  var x = breweries[selectors[f]].lon;
+  var x = breweries[selectors[f]].lat;
+  var y = breweries[selectors[f]].lon;
   if ( f === 0){
     string = x + "," + y;
   } else {
@@ -198,6 +198,22 @@ function generateRoute(){
     }
   }
   console.log(string)
+  displayRoute(string);
+}
+
+function displayRoute(string){
+  queryURL = "https://api.geoapify.com/v1/routing?waypoints=" + string +  "&mode=drive" + apikey;
+  console.log(queryURL);
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(data){
+    console.log(data);
+    
+    resetMap();
+
+  })
 }
 })
 
