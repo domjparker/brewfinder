@@ -201,6 +201,8 @@ function generateRoute(){
   displayRoute(string);
 }
 
+var routeMarkers = []; 
+
 function displayRoute(string){
   queryURL = "https://api.geoapify.com/v1/routing?waypoints=" + string +  "&mode=drive" + apikey;
   console.log(queryURL);
@@ -210,10 +212,39 @@ function displayRoute(string){
     method: "GET"
   }).then(function(data){
     console.log(data);
-    
+    for(let v = 0;v<data.properties.waypoints.length;v++){
+      routeMarkers.push(data.properties.waypoints[v]);
+      // console.log(routeMarkers);
+    };
+    console.log(routeMarkers);
+    //remove old markers from page
     resetMap();
-
+    addRouteMarkers();
   })
+}
+
+function addRouteMarkers(){
+      //iterate through routeMarker array to create items on page
+      for(let z = 0;z<routeMarkers.length;z++){
+        // var lat = routeMarkers[z][0];
+        // var lon = routeMarkers[z][1];
+        // console.log(lat);
+        // console.log(lon);
+        routeMarkers[z] = document.createElement('div');
+        routeMarkers[z].classList.add('beer');
+        // console.log(routeMarkers[z]);
+  
+        // routeMarkerDiv = document.createElement('div');
+        // routeMarkerDiv.classList.add('beer');
+  
+        //  places route markers on map
+         var routeMarker = new mapboxgl.Marker(routeMarkers[z], {
+          anchor: 'bottom',
+          offset: [0, 6]
+        })//places marker and popup on map
+          .setLngLat([routeMarkers[z][1],routeMarkers[z][0]])
+          .addTo(map);
+      }
 }
 })
 
