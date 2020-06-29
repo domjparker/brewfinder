@@ -77,8 +77,17 @@ nav {
         background-attachment: none;
         background-position: right;
     }
+
+
+
+
+ #aboutHeader {
+     font-size: 56px;
+     font-weight: 600;
+     font-family: 'Titillium Web', sans-serif;
+ }   
     
-h2{
+#quote{
     font-family: 'Kalam', cursive;
     text-align: center;
 
@@ -87,6 +96,13 @@ h2{
 #bodyText {
     display: block;
     text-align: center;
+    margin: 0 auto;
+    color: black;
+    text-shadow: 1px 1px 2px whitesmoke;
+    /* background-color: rgba(180, 180, 180, 0.2); */
+    width: 100%;
+    /* border-radius: 10%; */
+    padding-bottom: 30px;
 }
   
 
@@ -97,7 +113,7 @@ h2{
     display: flex;
   }
 
-  .image {
+  /* .image {
     display: block;
     width: 100%;
     height: auto;
@@ -129,15 +145,43 @@ h2{
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-  }
+  } */
+
+.aboutImg {
+    height: 200px;
+    width: auto;
+    max-width: 100%;
+}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 1px black;
     padding: 16px;
-    height: 350px;
+    height: 400px;
     text-align: center;
-    background-color: rgba(228, 228, 228, 0.5)
+    background-color: rgba(0, 0, 0, .7);
     
+}
+
+.name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 600 !important;
+    color: whitesmoke;
+}
+
+.jobDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.funFact {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: whitesmoke;
 }
 
 .bioPic {
