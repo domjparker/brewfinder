@@ -42,8 +42,9 @@ $(".searchButton").on("click",function(event){
   function resetMap(){
     $(".breweryData").empty();
     brewDataBox.addClass("hide");
-    $(".beer").remove();
+    $(".beerYum").remove();
     breweries = [];
+    selectors = [];
   }
 
 //use GEOcoding to center map on city coordinates
@@ -51,7 +52,7 @@ function centerMap(){
   //restric results to west coast
   var westCoast = "&bias=rect:-130.20324685239348,29.38890919715537,-101.11144997739359,51.94902867991925|countrycode:us,ca";
   var queryURL =  "https://api.geoapify.com/v1/geocode/search?text=" + city + "&type=city" + westCoast + apikey;
-  console.log(queryURL);
+  // console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -76,7 +77,7 @@ function getBrewData(x){
         method: "GET"
       }).then(function(response) {
         //remove console log before final release
-        console.log(response);
+        // console.log(response);
         //iterates through array of breweries creating objects and filling array for program use
         for (var i=0; i < response.length; i++){
             var breweryData = {
@@ -91,7 +92,7 @@ function getBrewData(x){
             arrayCleaner();
         }
         //remove console log before final release
-        console.log(breweries);
+        // console.log(breweries);
         //populate the map with markers
         populateMap();
         //render brewery data to page
@@ -118,6 +119,7 @@ function populateMap(){
     var lon = breweries[j].lon;
     beerIcon[j] = document.createElement('div');
     beerIcon[j].classList.add("beer");
+    beerIcon[j].classList.add("beerYum");
     beerIcon[j].classList.add(j + "beer");
     //creates popup
     var popup = new mapboxgl.Popup({
@@ -152,6 +154,7 @@ function renderBrewData(){
     brewery.append(breweryName);
     var breweryWebsite = $("<a>");
     breweryWebsite.text(breweries[i].website);
+    breweryWebsite.attr("target","_blank");
     breweryWebsite.attr("href", breweries[i].website);
     brewery.append(breweryWebsite);
     var breweryPhone = $("<p>");
@@ -199,15 +202,15 @@ function generateRoute(){
       string = string + "|" + x + "," + y ;
     }
   }
-  console.log(string)
-  displayRoute(string);
+  // console.log(string);
+  addRouteMarkers();
 }
 
 var routeMarkers = []; 
 
 function displayRoute(string){
   queryURL = "https://api.geoapify.com/v1/routing?waypoints=" + string +  "&mode=drive" + apikey;
-  console.log(queryURL);
+  // console.log(queryURL);
 
   $.ajax({
     url: queryURL,
@@ -218,35 +221,42 @@ function displayRoute(string){
       routeMarkers.push(data.properties.waypoints[v]);
       // console.log(routeMarkers);
     };
-    console.log(routeMarkers);
+    // console.log(routeMarkers);
     //remove old markers from page
-    resetMap();
-    addRouteMarkers();
+    
+    //addRouteMarkers();
+    
   })
 }
 
 function addRouteMarkers(){
-      //iterate through routeMarker array to create items on page
-      for(let z = 0;z<routeMarkers.length;z++){
-        // var lat = routeMarkers[z][0];
-        // var lon = routeMarkers[z][1];
-        // console.log(lat);
-        // console.log(lon);
-        routeMarkers[z] = document.createElement('div');
-        routeMarkers[z].classList.add('beer');
-        // console.log(routeMarkers[z]);
-  
-        // routeMarkerDiv = document.createElement('div');
-        // routeMarkerDiv.classList.add('beer');
-  
-        //  places route markers on map
-         var routeMarker = new mapboxgl.Marker(routeMarkers[z], {
-          anchor: 'bottom',
-          offset: [0, 6]
-        })//places marker and popup on map
-          .setLngLat([routeMarkers[z][1],routeMarkers[z][0]])
-          .addTo(map);
-      }
+  //creates the element for icon
+  var beerIcon =[];
+  for(let j = 0;j<selectors.length;j++){
+    var lat = breweries[selectors[j]].lat;
+    var lon = breweries[selectors[j]].lon;
+    // console.log(lat);
+    // console.log(lon);
+    beerIcon[selectors[j]] = document.createElement('div');
+    beerIcon[selectors[j]].classList.add("beer");
+    beerIcon[selectors[j]].classList.add(j + "beer2");
+    //creates popup
+    var popup = new mapboxgl.Popup({
+      anchor: 'bottom',
+      offset: [0, -42] // height - shadow
+    })
+    .setText(breweries[selectors[j]].name);
+    //creates marker
+    var beerMarker = new mapboxgl.Marker(beerIcon[selectors[j]], {
+    anchor: 'bottom',
+    offset: [0, 6]
+  })//places marker and popup on map
+    .setLngLat([lon, lat])
+    .setPopup(popup)
+    .addTo(map);
+    
+ }
+ resetMap();
 }
 })
 
