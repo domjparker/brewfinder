@@ -24,6 +24,11 @@ User can scroll through brewery results and choose which breweries they would li
 
 <img width="1680" alt="Screen Shot 2020-06-28 at 11 58 13 PM" src="https://user-images.githubusercontent.com/64296192/85984151-9c35d880-b99d-11ea-896f-7ba025b71c34.png">
 
+### 2c. Map Page: Route is Displayed
+When user clicks Show My Route, the map displays only the markers selected with add to route.
+
+<img width="1680" alt="Screen Shot 2020-06-29 at 8 57 15 AM" src="https://user-images.githubusercontent.com/64296192/86028377-a9c38080-b9e6-11ea-8a22-c88996fa4263.png">
+
 ### 3. About Page
 About the development team: Headshots, Development Roles, Favorite Beer, etc.
 
