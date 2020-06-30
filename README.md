@@ -1,7 +1,7 @@
 # BrewFinder
 ### Find a brew near you!
 #### Developers: Nick Mardon, Michael Rettus II, Dominic Parker, Martin Mudlin
-https://domjparker.github.io/project-1/
+https://domjparker.github.io/brewfinder/
 
 ### User Experience Guide
 
